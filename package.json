@@ -1,0 +1,23 @@
+{
+  "name": "240603_lottie_part3",
+  "version": "1.0.0",
+  "description": "___",
+  "main": ".stylelintrc.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "fix": "stylelint \"**/*.css\" --fix",
+    "format": "prettier --write \"**/*.js\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "^3.3.0",
+    "stylelint": "^16.6.1",
+    "stylelint-config-recess-order": "^5.0.1",
+    "stylelint-config-standard": "^36.0.0",
+    "stylelint-selector-bem-pattern": "^4.0.0"
+  }
+}

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lottie実装編 | 実装編サンプル（js）</title>
+
+  <link rel="stylesheet" href="./style.css">
+
+  <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
+
+  <script type="module" src="./index.js"></script>
+</head>
+
+<body>
+<div class="wrapper">
+  <search>
+    <form method="get" action="#" class="search-box">
+      <label class="search-box__label">
+        <input id="search-text" class="search-box_text" type="text" placeholder="キーワードを入力"
+               minlength="1" required aria-required="true">
+      </label>
+
+      <button type="button" id="search-button" class="search-box_button">
+        <span id="lottie" class="lottie"></span>
+      </button>
+    </form>
+  </search>
+
+  <div id="search-result" class="result-area">
+    <div id="search-status" class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
+</div>
+</body>
+</html>
