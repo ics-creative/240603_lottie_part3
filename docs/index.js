@@ -1,17 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const textBox = document.querySelector("#search-text");
-  const button = document.querySelector("#search-button");
   const lottieContainer = document.querySelector("#lottie");
-  const result = document.querySelector("#search-result");
-  const statusText = document.querySelector("#search-status");
-
   const anim = lottie.loadAnimation({
-    container: lottieContainer,
+    container: lottieContainer, //
     path: "./assets/search-anim.json",
-    renderer: "svg", // svg形式
-    autoplay: false, // 自動再生はしない
+    autoplay: false, // 自動再生はしない（デフォルトはtrue。省略可）
   });
   anim.setSpeed(1.9); // 少し早めのスピードに調整
+
+  // テキストボックス関連の要素
+  const textBox = document.querySelector("#search-text");
+  const button = document.querySelector("#search-button");
+  const result = document.querySelector("#search-result");
+  const statusText = document.querySelector("#search-status");
 
   const validate = () => {
     const validForm = document.querySelector("form:valid");
@@ -33,11 +33,11 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 const onSearch = async (anim, result, statusText) => {
+  statusText.innerText = "再検索中…";
+  result.classList.add("isLoading");
+
   // アニメーション再生
   anim.play();
-
-  result.classList.add("isLoading");
-  statusText.innerText = "再検索中…";
 
   // ローディング風にランダムな時間待機
   await wait((Math.floor(Math.random() * 5) + 1) * 1000);
@@ -45,9 +45,9 @@ const onSearch = async (anim, result, statusText) => {
   // アニメーション停止
   anim.stop();
 
-  result.style.display = "grid";
-  result.classList.remove("isLoading");
   statusText.innerText = "結果";
+  result.classList.remove("isLoading");
+  result.classList.remove("isFirstView");
 };
 
 const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));

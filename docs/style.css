@@ -1,14 +1,10 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-}
-
 :root {
   --color-black: #222;
 }
 
 body {
   height: 100%;
+  margin: 0;
   background-color: white;
 }
 
@@ -92,7 +88,7 @@ body {
 }
 
 .result-area {
-  display: none; /* jsから書き換える予定 */
+  display: grid;
   grid-template-columns: repeat(auto-fit, 240px);
   grid-auto-rows: max-content;
   gap: 24px;
@@ -100,6 +96,10 @@ body {
   width: 100%;
   max-width: 900px;
   padding: 16px;
+}
+
+.result-area.isFirstView {
+  display: none;
 }
 
 .result-area.isLoading {
