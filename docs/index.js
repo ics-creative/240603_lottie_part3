@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const lottieContainer = document.querySelector("#lottie");
   const anim = lottie.loadAnimation({
-    container: lottieContainer, //
+    container: lottieContainer,
     path: "./assets/search-anim.json",
     autoplay: false, // 自動再生はしない（デフォルトはtrue。省略可）
   });
@@ -21,10 +21,10 @@ document.addEventListener("DOMContentLoaded", () => {
   validate();
   textBox.addEventListener("input", validate);
 
+  // 虫眼鏡ボタン押下時、lottieを再生する
   button.addEventListener("click", async () => {
     await onSearch(anim, result, statusText);
   });
-
   button.addEventListener("keydown", async (event) => {
     if (event.key === "Enter") {
       await onSearch(anim, result, statusText);

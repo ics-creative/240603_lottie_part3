@@ -4,7 +4,7 @@ body {
   margin: 0;
   overflow-x: hidden;
   font-family: sans-serif;
-  background-image: linear-gradient(#f6c57b, #2939dc);
+  background-color: rgb(214 238 255);
 }
 
 .wrapper {
@@ -27,7 +27,17 @@ h1 {
   .lottie {
     position: absolute;
     top: 100%;
-    translate: 0 -100%;
+    left: 60%;
+    width: 100%;
+    translate: -50% -100%;
+  }
+
+  .lottie_1 {
+    left: calc(60% - 300px);
+  }
+
+  .lottie_2 {
+    left: calc(60% + 300px);
   }
 }
 
