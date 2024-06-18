@@ -2,9 +2,19 @@
   --color-black: #222;
 }
 
-body {
-  height: 100%;
+* {
+  box-sizing: border-box;
   margin: 0;
+}
+
+html{
+  height: 100%;
+}
+
+body {
+  display: grid;
+  place-content: center;
+  height: 100%;
   background-color: white;
 }
 
@@ -17,15 +27,8 @@ body {
 .wrapper {
   display: flex;
   flex-direction: column;
-  gap: 120px;
+  gap: 100px;
   align-items: center;
-  padding: 20vh 32px 48px;
-}
-
-@media (width < 769px) {
-  .wrapper {
-    padding: 20vh 16px 16px;
-  }
 }
 
 .lottie {
@@ -96,10 +99,11 @@ body {
   width: 100%;
   max-width: 900px;
   padding: 16px;
+  visibility: visible;
 }
 
 .result-area.isFirstView {
-  display: none;
+  visibility: hidden;
 }
 
 .result-area.isLoading {

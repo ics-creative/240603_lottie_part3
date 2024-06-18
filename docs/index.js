@@ -9,18 +9,9 @@ document.addEventListener("DOMContentLoaded", () => {
   anim.setSpeed(1.9); // 少し早めのスピードに調整
 
   // テキストボックス関連の要素
-  const textBox = document.querySelector("#search-text");
   const button = document.querySelector("#search-button");
   const result = document.querySelector("#search-result");
   const statusText = document.querySelector("#search-status");
-
-  const validate = () => {
-    const validForm = document.querySelector("form:valid");
-    button.disabled = validForm === null;
-  };
-
-  validate();
-  textBox.addEventListener("input", validate);
 
   // 虫眼鏡ボタン押下時、lottieを再生する
   button.addEventListener("click", async () => {
