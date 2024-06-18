@@ -20,30 +20,31 @@
       <form>
         <fieldset class="debug">
           <label class="debug_label">
+            <input type="radio" name="debug-radio" value="withoutBg" />
+            ①背景なし
+          </label>
+
+          <label class="debug_label">
             <input type="radio" name="debug-radio" value="withBg" checked />
-            ①単色背景あり
+            ②単色背景あり
           </label>
 
           <label class="debug_label">
             <input type="radio" name="debug-radio" value="withAnimBg" />
-            ②アニメーションする背景あり
+            ③アニメーションする背景あり
           </label>
 
-          <label class="debug_label">
-            <input type="radio" name="debug-radio" value="withoutBg" />
-            ③背景なし
-          </label>
 
           <span>- - - - - - </span>
 
           <label class="debug_label">
             <input type="radio" name="debug-radio" value="canvasWithoutBg" />
-            ④canvasレンダラー（③と同じJSONを使用）
+            ④canvasレンダラー（①と同じJSONを使用）
           </label>
 
           <label class="debug_label">
             <input type="radio" name="debug-radio" value="canvasAnimBg" />
-            ⑤canvasレンダラー（②と同じJSONを使用）
+            ⑤canvasレンダラー（③と同じJSONを使用）
           </label>
         </fieldset>
       </form>

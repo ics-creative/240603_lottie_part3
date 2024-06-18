@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   lottieContainers.forEach((element, index) => {
     const anim = lottie.loadAnimation({
       container: element,
-      path: "./../assets/cat.json",
+      path: "./../assets/maracas cat.json",
     });
     anims.push(anim);
   });
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const lottieContainers2 = document.querySelector("#lottie2");
   lottie.loadAnimation({
     container: lottieContainers2,
-    path: "./../assets/cat.json",
+    path: "./../assets/maracas cat.json",
   });
 
   let radioValue = null;
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (radioValue === "stop") {
         // 停止
         anims.forEach((anim) => {
-          anim.stop();
+          anim.pause();
         });
       } else if (radioValue === "destroy") {
         // 解放
@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
         lottieContainers.forEach((element, index) => {
           const anim = lottie.loadAnimation({
             container: element,
-            path: "./../assets/cat.json",
+            path: "./../assets/maracas cat.json",
           });
           anims.push(anim);
         });
@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
           lottieContainers.forEach((element, index) => {
             const anim = lottie.loadAnimation({
               container: element,
-              path: "./../assets/cat.json",
+              path: "./../assets/maracas cat.json",
             });
             anims.push(anim);
           });

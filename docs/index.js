@@ -2,9 +2,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const lottieContainer = document.querySelector("#lottie");
   const anim = lottie.loadAnimation({
     container: lottieContainer,
-    path: "./assets/search-anim.json",
+    path: "./assets/search.json",
     autoplay: false, // 自動再生はしない（デフォルトはtrue。省略可）
   });
+
   anim.setSpeed(1.9); // 少し早めのスピードに調整
 
   // テキストボックス関連の要素

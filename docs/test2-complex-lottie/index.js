@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
       anim.destroy();
       anim = lottie.loadAnimation({
         container: lottieContainers,
-        path: "./../assets/data-with-anim-bg.json",
+        path: "./../assets/data-with-gradient-bg.json",
         renderer: "svg",
       });
     } else if (e.target.value === "withoutBg") {
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
       anim.destroy();
       anim = lottie.loadAnimation({
         container: lottieContainers,
-        path: "./../assets/data-with-anim-bg.json",
+        path: "./../assets/data-with-gradient-bg.json",
         renderer: "canvas",
       });
     }
