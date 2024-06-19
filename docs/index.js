@@ -1,12 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
   const lottieContainer = document.querySelector("#lottie");
+
   const anim = lottie.loadAnimation({
     container: lottieContainer,
     path: "./assets/search.json",
     autoplay: false, // 自動再生はしない（デフォルトはtrue。省略可）
   });
 
-  anim.setSpeed(1.9); // 少し早めのスピードに調整
+  anim.setSpeed(1.7); // 少し早めのスピードに調整
 
   // テキストボックス関連の要素
   const button = document.querySelector("#search-button");
@@ -15,31 +16,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 虫眼鏡ボタン押下時、lottieを再生する
   button.addEventListener("click", async () => {
+    result.classList.add("isLoading");
+    statusText.innerText = "再検索中…";
     await onSearch(anim, result, statusText);
   });
   button.addEventListener("keydown", async (event) => {
     if (event.key === "Enter") {
+      result.classList.add("isLoading");
+      statusText.innerText = "再検索中…";
       await onSearch(anim, result, statusText);
     }
   });
+
+  // アニメーションの再生が完了したらローディング画面を非表示にする
+  // （本来はアニメーションの完了を待たず優先線的に表示させるべきですが作例としてcompleteイベントを使用しています）
+  anim.addEventListener("complete", () => {
+    result.classList.remove("isLoading");
+    statusText.innerText = "結果";
+    result.classList.remove("isFirstView");
+  });
 });
 
-const onSearch = async (anim, result, statusText) => {
-  statusText.innerText = "再検索中…";
-  result.classList.add("isLoading");
-
+const onSearch = async (anim) => {
   // アニメーション再生
+  anim.loop = true; // ループ再生
   anim.play();
 
   // ローディング風にランダムな時間待機
-  await wait((Math.floor(Math.random() * 5) + 1) * 1000);
+  await wait(Math.random() * 5000);
 
-  // アニメーション停止
-  anim.stop();
-
-  statusText.innerText = "結果";
-  result.classList.remove("isLoading");
-  result.classList.remove("isFirstView");
+  // アニメーションがループしないよう設定を変更（再生中のアニメーションが完了したら自動で停止）
+  anim.loop = false;
 };
 
 const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
