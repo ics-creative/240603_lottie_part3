@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     autoplay: false, // 自動再生はしない（デフォルトはtrue。省略可）
   });
 
-  anim.setSpeed(1.7); // 少し早めのスピードに調整
+  anim.setSpeed(1.7); // 速めの再生速度に調整
 
   // テキストボックス関連の要素
   const button = document.querySelector("#search-button");
