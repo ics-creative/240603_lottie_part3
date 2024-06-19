@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       root: null,
-      rootMargin: "-50% 0px", // ビューポートの中心
+      rootMargin: "-10% 0px -90%", // ビューポートの上部
       threshold: 0,
     },
   );
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (radioValue === "stop") {
         // 停止
         anims.forEach((anim) => {
-          anim.pause();
+          anim.stop();
         });
       } else if (radioValue === "destroy") {
         // 解放
