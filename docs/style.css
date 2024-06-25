@@ -83,8 +83,8 @@ body {
 
 .result-area {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 160px);
-  gap: 24px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
   place-content: center;
   width: 100%;
   max-width: 600px;
