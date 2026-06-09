@@ -3,14 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lottie実装編 | lottie-webサンプル</title>
+    <title>Lottie実装編 | dotLottie-webサンプル</title>
 
     <link rel="stylesheet" href="./style.css" />
-
-    <script
-      type="module"
-      src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"
-    ></script>
 
     <script type="module" src="./index.js"></script>
   </head>
@@ -36,15 +31,11 @@
             class="search-box_button"
             aria-label="検索"
           >
-            <span id="lottie" class="lottie"></span>
+            <canvas id="lottie" class="lottie"></canvas>
           </button>
         </form>
       </search>
-
-      <div id="search-result" class="result-area isFirstView">
-        <div id="search-status" class="box"></div>
-        <div class="box"></div>
-      </div>
+      <p id="search-status" class="status"></p>
     </div>
   </body>
 </html>
