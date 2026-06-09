@@ -1,3 +1,18 @@
+import { DotLottie } from "https://cdn.jsdelivr.net/npm/@lottiefiles/dotlottie-web@0.74.0/+esm";
+
+const maracasCat = "./../assets/maracas-cat.lottie";
+
+const createAnimation = (canvas) =>
+  new DotLottie({
+    canvas,
+    src: maracasCat,
+    autoplay: true,
+    loop: true,
+    renderConfig: {
+      autoResize: true
+    }
+  });
+
 document.addEventListener("DOMContentLoaded", () => {
   const lottieContainers = document.querySelectorAll(
     "#lottie-wrapper > .lottie",
@@ -5,20 +20,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // メインビジュアルのLottie
   let anims = [];
-  lottieContainers.forEach((element, index) => {
-    const anim = lottie.loadAnimation({
-      container: element,
-      path: "./../assets/maracas cat.json",
-    });
+  lottieContainers.forEach((element) => {
+    const anim = createAnimation(element);
     anims.push(anim);
   });
 
   // 本文セクションのLottie
   const lottieContainers2 = document.querySelector("#lottie2");
-  lottie.loadAnimation({
-    container: lottieContainers2,
-    path: "./../assets/maracas cat.json",
-  });
+  createAnimation(lottieContainers2);
 
   let radioValue = null;
 
@@ -37,17 +46,12 @@ document.addEventListener("DOMContentLoaded", () => {
   // 交差したときに呼び出す関数
   function doWhenIntersect(entry, radioValue) {
     if (entry.isIntersecting) {
-      if (radioValue === "stop") {
-        // 停止
-        anims.forEach((anim) => {
-          anim.stop();
-        });
-      } else if (radioValue === "destroy") {
+      if (radioValue === "destroy") {
         // 解放
         anims.forEach((anim) => {
           anim.destroy();
         });
-        anims = [];
+        anims.length = 0;
       }
     } else {
       if (anims.length !== 0) {
@@ -56,11 +60,8 @@ document.addEventListener("DOMContentLoaded", () => {
           anim.play();
         });
       } else {
-        lottieContainers.forEach((element, index) => {
-          const anim = lottie.loadAnimation({
-            container: element,
-            path: "./../assets/maracas cat.json",
-          });
+        lottieContainers.forEach((element) => {
+          const anim = createAnimation(element);
           anims.push(anim);
         });
       }
@@ -79,11 +80,8 @@ document.addEventListener("DOMContentLoaded", () => {
             anim.play();
           });
         } else {
-          lottieContainers.forEach((element, index) => {
-            const anim = lottie.loadAnimation({
-              container: element,
-              path: "./../assets/maracas cat.json",
-            });
+          lottieContainers.forEach((element) => {
+            const anim = createAnimation(element);
             anims.push(anim);
           });
         }
