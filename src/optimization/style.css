@@ -1,0 +1,98 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  font-family: sans-serif;
+  background-color: rgb(214 238 255);
+}
+
+.wrapper {
+  position: relative;
+}
+
+h1 {
+  position: absolute;
+  left: calc(50% - 100px);
+  translate: 50%;
+}
+
+.lottie-wrapper-1 {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  translate: -100px;
+
+  .lottie {
+    position: absolute;
+    top: 100%;
+    left: 60%;
+    width: 70%;
+    height: auto;
+    aspect-ratio: 1;
+    translate: -50% -100%;
+  }
+
+  .lottie_1 {
+    left: calc(60% - 300px);
+  }
+
+  .lottie_2 {
+    left: calc(60% + 300px);
+  }
+}
+
+.debug {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+}
+
+.debug_label {
+  input {
+    width: 16px;
+    height: 16px;
+  }
+
+  span {
+    display: block;
+    margin-left: 32px;
+  }
+}
+
+.lottie-wrapper-scroll {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  align-items: center;
+  width: 100%;
+  height: calc(100vh + 100px);
+  padding-top: 100px;
+  background-color: #fff;
+
+  .lottie {
+    width: 500px;
+    height: 500px;
+  }
+}
+
+.wrapper:has(#debug-translucent:checked) .lottie-wrapper-scroll {
+  background-color: #fffa;
+}
+
+#lottie-wrapper .lottie,
+#lottie-wrapper-2 .lottie {
+  width: min(70vw, 890px);
+  height: auto;
+  aspect-ratio: 890 / 560;
+}
