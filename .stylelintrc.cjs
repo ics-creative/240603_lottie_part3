@@ -1,5 +1,5 @@
 module.exports = {
-  ignoreFiles: ["docs/**/*"],
+  ignoreFiles: ["docs/**/*", "node_modules/**/*"],
   extends: [
     "stylelint-config-standard",
     "stylelint-config-recess-order",
