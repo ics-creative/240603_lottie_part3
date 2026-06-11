@@ -1,4 +1,4 @@
-import { DotLottie } from "@lottiefiles/dotlottie-web/webgl";
+import { DotLottie } from "@lottiefiles/dotlottie-web";
 import animation from "@/assets/complex-anim.lottie";
 
 const init = () => {
