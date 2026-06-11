@@ -1,1 +1,0 @@
-import"./modulepreload-polyfill-Dezn_h7o.js";import{n as e}from"./dist-CfP9gsRz.js";import{t}from"./complex-anim-DVmq4lDK.js";(()=>{let n=document.querySelector(`.lottie-wrapper`),r=document.createElement(`canvas`);n.appendChild(r),new e({canvas:r,src:t,autoplay:!0,loop:!0,renderConfig:{devicePixelRatio:window.devicePixelRatio*.75}})})();
